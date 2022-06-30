@@ -1,2 +1,6 @@
 *.JSON
 *.json
+*.lock.hcl
+providers/*
+*tfstate
+*exe
