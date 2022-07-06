@@ -1,6 +1,6 @@
-resource "google_pubsub_topic" "pub-sub-test-topic" {
+resource "google_pubsub_topic" "pub_sub_falabella_logs_landing_topic" {
 
-  name = var.pub-sub-test-topic-name
+  name = var.pub_sub_falabella_logs_landing_topic_name
 
   labels = {
     kind = "trigger_carga"
@@ -38,16 +38,16 @@ resource "google_pubsub_topic" "pub-sub-test-topic" {
   }
 } */
 
-/* resource "google_project_iam_binding" "project" {
-  project = var.project_id
+resource "google_project_iam_binding" "project" {
+  project = var.gcp_project
   role = "roles/iam.serviceAccountTokenCreator"
   members = [
     "serviceAccount:service-${var.project_number}@gcp-sa-pubsub.iam.gserviceaccount.com",
   ]
-} */
+} 
 
 
-/* resource "google_service_account" "service_account" {
+resource "google_service_account" "service_account" {
   account_id   = var.pubsub_service_account_name
   display_name = "Cloud Run Pub/Sub Invoker"
-} */
+}

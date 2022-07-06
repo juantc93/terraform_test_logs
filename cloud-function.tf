@@ -1,7 +1,7 @@
 # Generates an archive of the source code compressed as a .zip file.
 data "archive_file" "source" {
     type        = "zip"
-    source_dir  = "../src-cloud-function"
+    source_dir  = "./src-cloud-function"
     output_path = "/tmp/cloud-function.zip"
 }
 
@@ -28,17 +28,17 @@ resource "google_cloudfunctions_function" "function" {
 
     # Must match the function name in the cloud function `main.py` source code
     entry_point           = "publish_storage_file_to_pubsub"
-    region = var.region_cloud_function_bucket
+    region = var.gcp_region
     
     # 
     event_trigger {
         event_type = "google.storage.object.finalize"
-        resource   = var.input_bucket_name
+        resource   = var.bucket_name
     }
 
     environment_variables = {
-        project_id = var.project_id
-        topic_id = var.pub_sub
+        project_id = var.gcp_project
+        topic_id = var.pub_sub_falabella_logs_landing_topic_name
     }
 
     # Dependencies are automatically inferred so these lines can be deleted

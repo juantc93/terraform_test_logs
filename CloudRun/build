@@ -1,0 +1,1 @@
+gcloud builds submit --region=us-central1 --project=aa-study --tag us-central1-docker.pkg.dev/aa-study/gcf-artifacts/docker-log-test-image:latest

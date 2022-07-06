@@ -1,5 +1,5 @@
 # Creacion de bucket de Google Cloud Storage
-resource "google_storage_bucket" "prueba" {
+resource "google_storage_bucket" "landing" {
   name                        = var.bucket_name
   location                    = var.gcp_region
   storage_class               = var.bucket_storage_class
