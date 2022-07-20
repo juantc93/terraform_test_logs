@@ -1,74 +1,54 @@
+variable "gcp_auth_file" {
+  type        = string
+  description = "GCP authentication file"
+}
+# define GCP region
+variable "gcp_region" {
+  type        = string
+  description = "GCP region"
+}
+# define GCP project name
+variable "gcp_project" {
+  type        = string
+  description = "GCP project name"
+}
 
-variable "bucket_name" {
-  description = "Name of the GCP storage bucket"
+variable "business_unit" {
+  description = "falabella business unit"
   type        = string
 }
 
-# variable "bucket_backend" {
-#     description = "Name of the GCP storage bucket to store the terraform state"
-#     type        = string
-# }
-
-
-
-variable "bucket_storage_class" {
-  description = "Bucket storage storage class"
+variable "country" {
+  description = "falabella country"
   type        = string
-  default     = "standard"
 }
 
-variable "pub_sub_falabella_logs_landing_topic_name" {
-  description = "Pub sub trigger topic name"
+variable "origin_system" {
+  description = "falabella origin system"
   type        = string
-  default     = "standard"
 }
 
-
-variable "cloud_run_microservice_container" {
-  description = "container-image for cloud run function"
+variable "environment" {
+  description = "execution environment (dev,prd,etc.)"
   type        = string
-  default     = "standard"
 }
 
-variable "cloud_run_microservice_name" {
-  description = "container-image for cloud run function"
+variable "transaction_example" {
+  description = "transaction example"
   type        = string
-  default     = "standard"
 }
 
-variable "region_cloud_run_microservice" {
-  description = "container-image for cloud run function"
+variable "label_object_type" {
+  description = "transaction example"
   type        = string
-  default     = "standard"
 }
 
-variable "cloud_function_bucket_name" {
-  description = "bucket name to store the cloud function files"
+variable "label_engine" {
+  description = "transaction example"
   type        = string
-  default     = "standard"
 }
 
-
-variable "region_cloud_function_bucket" {
-  description = "region of the bucket to store the cloud function files"
-  type        = string
-  default     = "standard"
-}
-
-variable "cloud_function_bucket_storage_class" {
-  description = "storage class of the bucket to store the cloud function files"
-  type        = string
-  default     = "standard"
-}
-
-
-variable "project_number" {
-  description = "number of the gcp project"
-  type        = string
-  default     = "standard"
-}
-
-variable "pubsub_service_account_name" {
-  description = "ID de la service account configurada para pubsub"
-  type = string
+variable "label_pii" {
+  description = "transaction example"
+  type        = bool
 }
